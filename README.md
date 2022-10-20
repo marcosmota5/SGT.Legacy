@@ -1,30 +1,30 @@
 <div align="center">
-  <br />
-  <h1>SGT (Sistema de Gerenciamento Total) - Legado</h1>
-  <p>
-    Sistema desktop feito em Windows Forms/VB.NET com o objetivo de gerenciar aspectos operacionais de uma empresa.
-  </p>
-  <p>
-    Desenvolvido em .NET Framework v4.7.2 e, atualmente, disponível apenas para desktop.
-  </p>
+   <br />
+   <h1>SGT (Total Management System) - Legacy</h1>
+   <p>
+     Desktop system made in Windows Forms/VB.NET with the objective of managing operational aspects of a company.
+   </p>
+   <p>
+     Developed on .NET Framework v4.7.2 and currently only available for desktop.
+   </p>
 </div>
 
-## Pontos importantes
+## Important points
 
-- Esse sistema foi desenvolvido durante uma fase de aprendizado e experimentação, portanto ele não segue boas práticas. Tenha isso em mente.
-- Todo o sistema (classes, interfaces e etc) estão escritos em pt-br.
-- Esse sistema é uma versão legada que não é mais utilizada por diversos motivos.
+- This system was developed during a learning and experimentation phase, therefore it does not follow good practices. Keep this in mind.
+- The entire system (classes, interfaces, etc.) is written in pt-br.
+- This system is a legacy version that is no longer used for several reasons.
 
-## Entre em contato
+## Contact
 
 - [Email](mailto:marcosmota5@hotmail.com)
 
-## Licença
+## License
 
-Este sistema é de propriedade de Marcos Mota, sendo vetada a sua distribuição ou cópia a menos que previamente autorizada pelo proprietário.
+This system is owned by Marcos Mota, and its distribution or copying is prohibited unless previously authorized by the owner.
 
 Copyright © Marcos Oliveira Mota
 
-## Contribuidores
+## Contributors
 
-- [Marcos Mota / Desenvolvedor](mailto:marcosmota5@hotmail.com)
+- [Marcos Mota / Developer](mailto:marcosmota5@hotmail.com)
