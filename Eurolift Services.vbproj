@@ -1,0 +1,1917 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7B0E095-4AFF-4AEF-B321-ED070EAA9052}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Eurolift_Services.My.MyApplication</StartupObject>
+    <RootNamespace>Eurolift_Services</RootNamespace>
+    <AssemblyName>SGT - Sistema de Gerenciamento Total</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SGT - Sistema de Gerenciamento Total.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SGT - Sistema de Gerenciamento Total.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>service_record_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Rest.ClientRuntime.2.3.21\lib\net461\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.22\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ookii.Dialogs.WinForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=66aa232afad40158, processorArchitecture=MSIL">
+      <HintPath>packages\Ookii.Dialogs.WinForms.1.2.0\lib\net45\Ookii.Dialogs.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Cng, Version=4.3.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Cng.4.7.0\lib\net47\System.Security.Cryptography.Cng.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.22\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Validator">
+      <HintPath>packages\Validator\Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.22\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alterar_Senha.Designer.vb">
+      <DependentUpon>Alterar_Senha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alterar_Senha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anos.Designer.vb">
+      <DependentUpon>Anos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Anos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Carga_Dados.Designer.vb">
+      <DependentUpon>Carga_Dados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Carga_Dados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes.Designer.vb">
+      <DependentUpon>Clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colunas_Importacao.Designer.vb">
+      <DependentUpon>Colunas_Importacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Colunas_Importacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comentario_Manifestacao.Designer.vb">
+      <DependentUpon>Comentario_Manifestacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comentario_Manifestacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conexao_Proreports.vb" />
+    <Compile Include="Conjuntos.Designer.vb">
+      <DependentUpon>Conjuntos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Conjuntos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contatos.Designer.vb">
+      <DependentUpon>Contatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controle_Item.Designer.vb">
+      <DependentUpon>Controle_Item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controle_Item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="db_eurolift_sgtDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_eurolift_sgtDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_eurolift_sgtDataSet.vb">
+      <DependentUpon>db_eurolift_sgtDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Desconto.Designer.vb">
+      <DependentUpon>Desconto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Desconto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Download_Progresso.Designer.vb">
+      <DependentUpon>Download_Progresso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Download_Progresso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresas.Designer.vb">
+      <DependentUpon>Empresas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Especificacoes.Designer.vb">
+      <DependentUpon>Especificacoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Especificacoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fabricantes.Designer.vb">
+      <DependentUpon>Fabricantes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fabricantes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Familias.Designer.vb">
+      <DependentUpon>Familias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Familias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filiais.Designer.vb">
+      <DependentUpon>Filiais.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Filiais.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedores.Designer.vb">
+      <DependentUpon>Fornecedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcoes.vb" />
+    <Compile Include="Gerenciar_Usuarios.Designer.vb">
+      <DependentUpon>Gerenciar_Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerenciar_Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importar_Pecas.Designer.vb">
+      <DependentUpon>Importar_Pecas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Importar_Pecas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inserir_Frete.Designer.vb">
+      <DependentUpon>Inserir_Frete.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inserir_Frete.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Justificativa_Aprovacao.Designer.vb">
+      <DependentUpon>Justificativa_Aprovacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Justificativa_Aprovacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelos.Designer.vb">
+      <DependentUpon>Modelos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nova_Versao.Designer.vb">
+      <DependentUpon>Nova_Versao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nova_Versao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opcoes.Designer.vb">
+      <DependentUpon>Opcoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Opcoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil.Designer.vb">
+      <DependentUpon>Perfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisa_Manifestacao.Designer.vb">
+      <DependentUpon>Pesquisa_Manifestacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisa_Manifestacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisa_Proposta_Padrao.Designer.vb">
+      <DependentUpon>Pesquisa_Proposta_Padrao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisa_Proposta_Padrao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisa_Proposta_Avancada.Designer.vb">
+      <DependentUpon>Pesquisa_Proposta_Avancada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisa_Proposta_Avancada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recuperar_Senha.Designer.vb">
+      <DependentUpon>Recuperar_Senha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recuperar_Senha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro_Alteracoes.Designer.vb">
+      <DependentUpon>Registro_Alteracoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro_Alteracoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enviar_Notificacao.Designer.vb">
+      <DependentUpon>Enviar_Notificacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Enviar_Notificacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro_Manifestacoes.Designer.vb">
+      <DependentUpon>Registro_Manifestacoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro_Manifestacoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Responder_Email.Designer.vb">
+      <DependentUpon>Responder_Email.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Responder_Email.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Senha_Carga_Dados.Designer.vb">
+      <DependentUpon>Senha_Carga_Dados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Senha_Carga_Dados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Series.Designer.vb">
+      <DependentUpon>Series.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Series.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setores.Designer.vb">
+      <DependentUpon>Setores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Setores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sobre.Designer.vb">
+      <DependentUpon>Sobre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sobre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subs.vb" />
+    <Compile Include="Proposta.Designer.vb">
+      <DependentUpon>Proposta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Proposta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.vb">
+      <DependentUpon>Inicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrar.Designer.vb">
+      <DependentUpon>Entrar.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conexao.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Cadastrar_Usuario.Designer.vb">
+      <DependentUpon>Cadastrar_Usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastrar_Usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Status_Aprovacao.Designer.vb">
+      <DependentUpon>Status_Aprovacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Status_Aprovacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Taxas.Designer.vb">
+      <DependentUpon>Taxas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Taxas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Termos.Designer.vb">
+      <DependentUpon>Termos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Termos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tipos_Equipamentos.Designer.vb">
+      <DependentUpon>Tipos_Equipamentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tipos_Equipamentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Variaveis_e_Propriedades_Publicas.vb" />
+    <Compile Include="Visualizar_Proposta.Designer.vb">
+      <DependentUpon>Visualizar_Proposta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizar_Proposta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visualizar_Proposta_Peca.Designer.vb">
+      <DependentUpon>Visualizar_Proposta_Peca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizar_Proposta_Peca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visualizar_Proposta_Servico.Designer.vb">
+      <DependentUpon>Visualizar_Proposta_Servico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizar_Proposta_Servico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Alterar_Senha.resx">
+      <DependentUpon>Alterar_Senha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anos.resx">
+      <DependentUpon>Anos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carga_Dados.resx">
+      <DependentUpon>Carga_Dados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colunas_Importacao.resx">
+      <DependentUpon>Colunas_Importacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comentario_Manifestacao.resx">
+      <DependentUpon>Comentario_Manifestacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conjuntos.resx">
+      <DependentUpon>Conjuntos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contatos.resx">
+      <DependentUpon>Contatos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controle_Item.resx">
+      <DependentUpon>Controle_Item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desconto.resx">
+      <DependentUpon>Desconto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Download_Progresso.resx">
+      <DependentUpon>Download_Progresso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresas.resx">
+      <DependentUpon>Empresas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Especificacoes.resx">
+      <DependentUpon>Especificacoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fabricantes.resx">
+      <DependentUpon>Fabricantes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Familias.resx">
+      <DependentUpon>Familias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filiais.resx">
+      <DependentUpon>Filiais.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedores.resx">
+      <DependentUpon>Fornecedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerenciar_Usuarios.resx">
+      <DependentUpon>Gerenciar_Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importar_Pecas.resx">
+      <DependentUpon>Importar_Pecas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inserir_Frete.resx">
+      <DependentUpon>Inserir_Frete.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Justificativa_Aprovacao.resx">
+      <DependentUpon>Justificativa_Aprovacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelos.resx">
+      <DependentUpon>Modelos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nova_Versao.resx">
+      <DependentUpon>Nova_Versao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opcoes.resx">
+      <DependentUpon>Opcoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfil.resx">
+      <DependentUpon>Perfil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisa_Manifestacao.resx">
+      <DependentUpon>Pesquisa_Manifestacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisa_Proposta_Padrao.resx">
+      <DependentUpon>Pesquisa_Proposta_Padrao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisa_Proposta_Avancada.resx">
+      <DependentUpon>Pesquisa_Proposta_Avancada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proposta.resx">
+      <DependentUpon>Proposta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entrar.resx">
+      <DependentUpon>Entrar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastrar_Usuario.resx">
+      <DependentUpon>Cadastrar_Usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recuperar_Senha.resx">
+      <DependentUpon>Recuperar_Senha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro_Alteracoes.resx">
+      <DependentUpon>Registro_Alteracoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro_Manifestacoes.resx">
+      <DependentUpon>Registro_Manifestacoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Relatorio_Proposta - Cópia .rdlc" />
+    <EmbeddedResource Include="Relatorios\Relatorio_Proposta_Peca  - Cópia .rdlc" />
+    <EmbeddedResource Include="Relatorios\Relatorio_Proposta_Peca .rdlc" />
+    <EmbeddedResource Include="Relatorios\Relatorio_Proposta_Servico .rdlc" />
+    <EmbeddedResource Include="Relatorios\Relatorio_Proposta.rdlc" />
+    <EmbeddedResource Include="Enviar_Notificacao.resx">
+      <DependentUpon>Enviar_Notificacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Responder_Email.resx">
+      <DependentUpon>Responder_Email.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Senha_Carga_Dados.resx">
+      <DependentUpon>Senha_Carga_Dados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Series.resx">
+      <DependentUpon>Series.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setores.resx">
+      <DependentUpon>Setores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sobre.resx">
+      <DependentUpon>Sobre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Status_Aprovacao.resx">
+      <DependentUpon>Status_Aprovacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taxas.resx">
+      <DependentUpon>Taxas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Termos.resx">
+      <DependentUpon>Termos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tipos_Equipamentos.resx">
+      <DependentUpon>Tipos_Equipamentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visualizar_Proposta.resx">
+      <DependentUpon>Visualizar_Proposta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visualizar_Proposta_Peca.resx">
+      <DependentUpon>Visualizar_Proposta_Peca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visualizar_Proposta_Servico.resx">
+      <DependentUpon>Visualizar_Proposta_Servico.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="db_eurolift_sgtDataSet.xsc">
+      <DependentUpon>db_eurolift_sgtDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_eurolift_sgtDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_eurolift_sgtDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_eurolift_sgtDataSet.xss">
+      <DependentUpon>db_eurolift_sgtDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-square-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adjust-contrast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align-justify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align-to-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align-to-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anchor-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-character-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angle-arrow-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angle-arrow-pointing-to-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angle-pointing-to-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archive-black-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-angle-pointing-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-on-black-circular-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowhead-pointing-to-the-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowhead-pointing-up-inside-a-square-box-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowheads-pointing-to-the-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-pointing-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-pointing-right-in-a-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-pointing-to-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-pointing-to-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up-on-a-black-circle-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asterisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ban-circle-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar-graph-on-a-rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beer-jar-black-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell-musical-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bitbucket-logotype-camera-lens-in-perspective.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bitbucket-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bitcoin-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blank-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bold-text-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark-black-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\branch-with-leaves-black-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\briefcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building-front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bull-horn-announcer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullseye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-page-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-with-spring-binder-and-date-blocks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-retro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-arrow-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\center-text-alignment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\certificate-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-box-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkered-raised-flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-sign-in-a-rounded-black-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-arrow-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-arrow-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-pointing-to-the-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-sign-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-sign-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-sign-to-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-shape-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-with-an-arrow-pointing-to-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circular-shape-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-storage-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-storage-uploading-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cocktail-glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\code-fork-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee-cup-on-a-plate-black-silhouettes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cog-wheel-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collapse-window-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment-black-oval-bubble-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment-white-oval-bubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compass-circular-variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-tablet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correct-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\couple-of-arrows-changing-places.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crop-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross-mark-on-a-black-circle-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\css-3-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delivery-truck-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop-monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot-and-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double-angle-pointing-to-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double-left-chevron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double-sided-eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double-strikethrough-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-to-storage-drive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dribbble-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dropbox-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earth-globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-interface-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eject-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\envelope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\envelope-of-white-paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\euro-currency-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange-arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamation-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\external-link-square-with-an-arrow-in-right-diagonal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\external-link-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-with-a-diagonal-line-interface-symbol-for-invisibility.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook-logo-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facetime-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fast-forward-arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\female-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fighter-jet-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\film-strip-with-two-photograms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter-tool-black-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finger-of-a-hand-pointing-to-right-direction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire-extinguisher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag-black-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flickr-website-logo-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fluffy-cloud-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-closed-black-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-white-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font-selection-editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font-symbol-of-letter-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fork-and-knife-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\four-black-squares.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foursquare-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fullscreen-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gamepad-console.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gift-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github-character.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gittip-website-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-plus-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-plus-symbol-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\great-britain-pound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-profile-users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\half-star-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand-finger-pointing-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand-pointing-to-left-direction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand-pointing-upward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hard-drive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart-shape-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart-shape-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\horizontal-resize-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hostpital-building.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel-letter-h-sign-inside-a-black-rounded-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\html-5-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increase-size-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indent-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\italicize-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-indentation-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\legal-hammer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lemon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leter-a-inside-a-black-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\letter-p-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\light-bulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning-bolt-shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linkedin-letters.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linkedin-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linux-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listing-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-on-window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-with-dots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\long-arrow-pointing-to-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\long-arrow-pointing-to-the-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\long-arrow-pointing-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magic-wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying-glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map-marker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxcdn-website-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-kit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meh-face-emoticon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microphone-black-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microphone-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-sign-inside-a-black-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-sign-inside-a-black-rounded-square-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-sign-on-a-square-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mobile-phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moon-phase-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musical-bell-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-headphones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-note-black-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nine-black-tiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\numbered-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-folder-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-laptop-computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-padlock-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-wrench-tool-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock-unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper-bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper-clip-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper-push-pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste-from-clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo-camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pinterest-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pinterest-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plant-leaf-with-white-details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-video-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-black-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-sign-in-a-black-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-symbol-in-a-rounded-black-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-button-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printing-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\puzzle-piece-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qr-code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question-mark-on-a-circular-black-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quote-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reduced-volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-page-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\renren-social-network-of-china-logotype.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reorder-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reply-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resize-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retweet-arrows-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rewind-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow-in-a-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-chevron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-quotation-mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\road-perspective.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rounded-black-square-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rss-feed-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rss-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rupee-indian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-file-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\screenshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share-post-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart-black-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signal-bars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sitemap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skype-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\small-rocket-ship-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-arrows-couple-pointing-up-and-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-by-alphabet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-by-attributes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-by-attributes-interface-button-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-by-numeric-order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-by-order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-reverse-alphabetical-order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speech-bubbles-comment-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spinner-of-dots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square-shape-shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stack-exchange-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stack-exchange-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star-half-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step-backward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step-forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stethoscope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strikethrough.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suitcase-with-white-details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\superscript-text-formatting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table-grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag-black-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tags.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tasks-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telephone-handle-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telephone-symbol-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terminal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-file-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-height-adjustment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-width.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thin-arrowheads-pointing-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\three-small-square-shapes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumb-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumbs-down-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumbs-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumbs-up-hand-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tint-drop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trello-website-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tumblr-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tumblr-logo-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turkish-lire-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter-black-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\two-columns-layout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\umbrella-black-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\underline-text-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlink-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up-chevron-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-md-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u-shaped-thick-magnet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vertical-ellipsis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vertical-resizing-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video-play-square-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vimeo-square-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vintage-key-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vk-social-network-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume-up-interface-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning-sign-on-a-triangular-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weibo-website-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheelchair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-flag-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windows-logo-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x2-symbol-of-a-letter-and-a-number-subscript.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xing-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xing-logotype.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yen-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube-logo-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube-logo-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_picture 64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_picture 128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_eurolift.png" />
+    <None Include="Resources\logo_still_linde.png" />
+    <None Include="Resources\clear-filter-icon-4.jpg" />
+    <None Include="Resources\xlsx-file-format-extension.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\reply-email.png" />
+    <None Include="Resources\settings %283%29.png" />
+    <None Include="Resources\hand-shake.png" />
+    <None Include="Resources\suitcase.png" />
+    <None Include="Resources\pdf-file-format-symbol.png" />
+    <None Include="Resources\pdf-file.png" />
+    <None Include="Resources\writing.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\export %281%29.png" />
+    <None Include="Resources\import %284%29.png" />
+    <None Include="Resources\defining.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\info %283%29.png" />
+    <None Include="Resources\warning %281%29.png" />
+    <None Include="Resources\discount.png" />
+    <None Include="Resources\advanced_search.png" />
+    <None Include="Resources\request.png" />
+    <None Include="Resources\log-format.png" />
+    <None Include="Resources\data-copy.png" />
+    <None Include="Resources\gear-option.png" />
+    <None Include="Resources\reload.png" />
+    <None Include="Resources\update-profile-user.png" />
+    <None Include="Resources\password.png" />
+    <None Include="Resources\profile.png" />
+    <None Include="Resources\new-user.png" />
+    <None Include="Resources\profile-user.png" />
+    <None Include="Resources\taxes.png" />
+    <None Include="Resources\department.png" />
+    <None Include="Resources\business-center.png" />
+    <None Include="Resources\building.png" />
+    <None Include="Resources\specification.png" />
+    <None Include="Resources\settings %284%29.png" />
+    <None Include="Resources\terms-and-conditions.png" />
+    <None Include="Resources\hotel-supplier.png" />
+    <None Include="Resources\documents.png" />
+    <None Include="Resources\wireless-signal-interface-status-symbol-of-bars-group.png" />
+    <None Include="Resources\steps.png" />
+    <None Include="Resources\calendar %282%29.png" />
+    <None Include="Resources\calendar %281%29.png" />
+    <None Include="Resources\motorcade.png" />
+    <None Include="Resources\forklift-truck.png" />
+    <None Include="Resources\technology.png" />
+    <None Include="Resources\manufacturer.png" />
+    <None Include="Resources\contact-book.png" />
+    <None Include="Resources\clerk-with-tie.png" />
+    <Content Include="service_record_icon.ico" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Outlook">
+      <Guid>{00062FFF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

@@ -1,0 +1,103 @@
+Sub Retorna_Emails2()
+
+        If trv_Pasta_Email.SelectedNode Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim EntryID As String = trv_Pasta_Email.SelectedNode.Name
+        Dim Texto_Fornecedor As String = ""
+        Dim olApp As New Outlook.Application()
+        Dim olNameSpace As [NameSpace] = olApp.GetNamespace("MAPI")
+        Dim olFolder As MAPIFolder = olNameSpace.GetFolderFromID(EntryID)
+        Dim olMail As MailItem
+        Dim olItems As Items
+        Dim olItem As Object
+
+
+        Select Case get_id_fornecedor
+            Case 1
+                Texto_Fornecedor = "COTACAO-"
+            Case 2
+                Texto_Fornecedor = "TVH - Orçamento"
+        End Select
+
+        Try
+
+            dtg_Emails.Columns.Clear()
+            dtg_Emails.Rows.Clear()
+
+            dtg_Emails.Columns.Add("id", "ID")
+            dtg_Emails.Columns.Add("data_recebimento", "Data/hora")
+            dtg_Emails.Columns.Add("remetente", "Remetente")
+            dtg_Emails.Columns.Add("assunto", "Assunto")
+
+            dtg_Emails.Columns("id").Visible = False
+
+            Dim dtDe As Date = Date.Parse(dtp_De.Value.ToShortDateString)
+            Dim dtAte As Date = Date.Parse(dtp_Ate.Value.ToShortDateString)
+            Dim dtRev As Date
+
+            olItems = olFolder.Items
+            'olItems.Sort("[ReceivedTime]", True)
+
+            For Each olItem In olItems
+                If (TypeOf olItem Is MailItem) Then
+                    olMail = olItem
+                    dtRev = Date.Parse(olMail.ReceivedTime.ToShortDateString)
+                    If Strings.InStr(olMail.Subject, Texto_Fornecedor) > 0 Then
+
+                        'MessageBox.Show(dtDe.ToShortDateString & vbNewLine & dtAte.ToShortDateString & vbNewLine & dtRev.ToShortDateString)
+                        If dtRev >= dtDe And dtRev <= dtAte Then
+
+                            If get_id_fornecedor = 1 Then
+
+                                Dim contem_proposta As Boolean = False
+                                For Each elAtt As Attachment In olMail.Attachments
+                                    '  MessageBox.Show(elAtt.FileName)
+                                    If Strings.Right(elAtt.FileName, 3) = "xls" Then
+                                        contem_proposta = True
+                                        Exit For
+                                    End If
+                                Next
+
+                                If contem_proposta = True Then
+
+                                    Dim id_existe As Boolean = False
+                                    For Each e_row As DataGridViewRow In dtg_Emails.Rows
+                                        If olMail.EntryID = e_row.Cells("ID").Value Then
+                                            id_existe = True
+                                            Exit For
+                                        End If
+                                    Next
+
+                                    If id_existe = False Then
+                                        dtg_Emails.Rows.Add(olMail.EntryID, olMail.ReceivedTime, olMail.SenderEmailAddress, olMail.Subject)
+                                    End If
+                                End If
+
+                            Else
+
+                                Dim id_existe As Boolean = False
+                                For Each e_row As DataGridViewRow In dtg_Emails.Rows
+                                    If olMail.EntryID = e_row.Cells("ID").Value Then
+                                        id_existe = True
+                                        Exit For
+                                    End If
+                                Next
+
+                                If id_existe = False Then
+                                    dtg_Emails.Rows.Add(olMail.EntryID, olMail.ReceivedTime, olMail.SenderEmailAddress, olMail.Subject)
+                                End If
+
+                            End If
+                        End If
+                    End If
+                End If
+
+            Next
+
+        Catch ex As System.Exception
+
+        End Try
+
+    End Sub
